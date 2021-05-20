@@ -57,6 +57,7 @@ ARG DEPS="\
         php7.4-dev \
         php7.4-pear \
         php7.4-pdo \
+        php7.4-sqlite3 \
         curl \
         ca-certificates \
         runit \
@@ -72,7 +73,7 @@ RUN set -x \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
 RUN apk update
-RUN apk add bash
+RUN apk add bash nodejs
 
 COPY nginx /
 
